@@ -1,0 +1,58 @@
+###  Crear Tarea Pendiente
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Estudiar ExpressJS",
+    "completada": false
+}
+
+###  Crear Tarea Completada
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Instalar NodeJS",
+    "completada": true
+}
+
+###  Crear otra Tarea Pendiente
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Hacer la entrega en GitHub",
+    "completada": false
+}
+
+###  Nombre Duplicado (Error 409)
+POST http://localhost:3000/api/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Estudiar ExpressJS"
+}
+
+###  Consultar TODAS las tareas
+GET http://localhost:3000/api/tareas
+
+###  Consultar SOLO tareas COMPLETADAS
+GET http://localhost:3000/api/tareas?completada=true
+
+### Consultar SOLO tareas PENDIENTES
+GET http://localhost:3000/api/tareas?completada=false
+
+###  Marcar tarea 1 como completada (PATCH)
+PATCH http://localhost:3000/api/tareas/1/completar
+
+###  Modificar tarea por completo (PUT)
+PUT http://localhost:3000/api/tareas/1
+Content-Type: application/json
+
+{
+    "nombre": "Estudiar ExpressJS Avanzado",
+    "completada": true
+}
+
+###  Eliminar tarea
+DELETE http://localhost:3000/api/tareas/2
