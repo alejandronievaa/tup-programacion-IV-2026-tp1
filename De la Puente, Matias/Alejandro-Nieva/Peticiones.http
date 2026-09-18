@@ -1,0 +1,32 @@
+### Obtener todos los elementos
+GET http://localhost:3000/api/recursos
+
+### elemento válido
+POST http://localhost:3000/api/recursos
+Content-Type: application/json
+
+{
+    "nombre": "Producto A",
+    "precio": 150.50
+}
+
+### precio negativo
+POST http://localhost:3000/api/recursos
+Content-Type: application/json
+
+{
+    "nombre": "Producto B",
+    "precio": -10
+}
+
+### Actualizar elemento por ID
+PUT http://localhost:3000/api/recursos/1
+Content-Type: application/json
+
+{
+    "nombre": "Producto Modificado",
+    "precio": 200
+}
+
+### Eliminar elemento por ID
+DELETE http://localhost:3000/api/recursos/1
