@@ -1,9 +1,9 @@
 {
-  "name": "ejercicio1",
+  "name": "ejercicio2",
   "version": "1.0.0",
-  "description": "Api rectangulos",
+  "description": "API academica",
   "license": "ISC",
-  "author": "Alejandro Nieva",
+  "author": "Nieva Alejandro",
   "type": "module",
   "main": "index.js",
   "scripts": {

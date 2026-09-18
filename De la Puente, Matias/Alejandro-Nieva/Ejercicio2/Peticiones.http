@@ -1,0 +1,62 @@
+### 1. Crear Alumno Promocionado (Promedio >= 8)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Alejandro Nieva",
+    "notas": [8, 9, 10]
+}
+
+### 2. Crear Alumno Aprobado (Promedio entre 6 y 7)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Juan Perez",
+    "notas": [6, 7, 6]
+}
+
+### 3. Crear Alumno Reprobado (Promedio < 6)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Maria Gomez",
+    "notas": [4, 5, 3]
+}
+
+### 4. Probar Error: Nombre Duplicado (Error 409)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Alejandro Nieva",
+    "notas": [7, 7, 7]
+}
+
+### 5. Probar Error: Notas Inválidas (Menos de 3 notas o valores fuera de rango)
+POST http://localhost:3000/api/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Pedro Picapiedra",
+    "notas": [10, 12]
+}
+
+### 6. Obtener todos los alumnos con sus promedios
+GET http://localhost:3000/api/alumnos
+
+### 7. Consultar un alumno por ID
+GET http://localhost:3000/api/alumnos/1
+
+### 8. Actualizar un alumno
+PUT http://localhost:3000/api/alumnos/1
+Content-Type: application/json
+
+{
+    "nombre": "Alejandro Nieva Modificado",
+    "notas": [10, 10, 10]
+}
+
+### 9. Eliminar un alumno
+DELETE http://localhost:3000/api/alumnos/2
