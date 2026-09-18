@@ -1,53 +1,32 @@
-###  Crear un nuevo recurso
-POST http://localhost:3000/api/recursos
+### 1. Crear un rectángulo común (Base 10, Altura 5)
+POST http://localhost:3000/api/rectangulos
 Content-Type: application/json
 
 {
-  "nombre": "Teclado Mecánico",
-  "precio": 150
+  "base": 10,
+  "altura": 5
 }
 
-###  Crear otro recurso
-POST http://localhost:3000/api/recursos
+### 2. Crear un cuadrado (Base 4, Altura 4)
+POST http://localhost:3000/api/rectangulos
 Content-Type: application/json
 
 {
-  "nombre": "Mouse Inalámbrico",
-  "precio": 80
+  "base": 4,
+  "altura": 4
 }
 
-### Obtener todos los recursos
-GET http://localhost:3000/api/recursos
+### 3. Obtener todos los cálculos
+GET http://localhost:3000/api/rectangulos
 
-### Obtener recursos con límite (Query Param)
-GET http://localhost:3000/api/recursos?limite=1
+### 4. Obtener cálculo por ID
+GET http://localhost:3000/api/rectangulos/1
 
-### Modificar un recurso por ID
-PUT http://localhost:3000/api/recursos/1
+### 5. Validación: Error por número negativo o cero
+POST http://localhost:3000/api/rectangulos
 Content-Type: application/json
 
 {
-  "nombre": "Teclado RGB Pro",
-  "precio": 180
-}
-
-### Eliminar un recurso por ID
-DELETE http://localhost:3000/api/recursos/2
-
-### Validación: Error al enviar un precio negativo (400 Bad Request)
-POST http://localhost:3000/api/recursos
-Content-Type: application/json
-
-{
-  "nombre": "Monitor",
-  "precio": -100
-}
-
-### Validación: Error al buscar ID inexistente (404 Not Found)
-PUT http://localhost:3000/api/recursos/999
-Content-Type: application/json
-
-{
-  "nombre": "No existe",
-  "precio": 50
+  "base": -5,
+  "altura": 10
 }
